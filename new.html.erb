@@ -1,0 +1,17 @@
+<%= form_with(model: @blog, local: true) do |form| %>
+  <% if @blog.errors.any? %> #エラーが存在してる時だけ内部の処理を実行する
+    <div id = "error_explanation" >
+      <h2><%= @blog.errors.count %>件のエラーがあります。</h2>
+      <ul>
+      <% @blog.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <h2>ブログを作成する</h2>
+  <%= render 'form' %>
+  </div>
+ 
+<% end %>
